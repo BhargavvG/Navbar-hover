@@ -12,9 +12,9 @@ function App() {
         class="d-block w-100"
       ></img>
       <img
-        src="https://ik.imagekit.io/2e5xfxvehcg/Myntra/Assets/img/carousel1_qD4cgmXKm.jpg"
+        src="https://ik.imagekit.io/2e5xfxvehcg/Myntra/Assets/img/carousel2_dL7cn7d9j.webp"
         class="d-block w-100"
-      ></img>
+      />
     </>
   );
 }

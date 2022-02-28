@@ -1,6 +1,8 @@
 import React from "react";
 import DummyText from "./DummyText";
+import HoverSection from "./HoverSection";
 import "./navbar.css";
+import navData from "./navData";
 
 export default function Navbar() {
   return (
@@ -26,31 +28,21 @@ export default function Navbar() {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Home
-              </a>
-              <div className="nav-hover-container">
-                <div className="nav-hover-section">
-                  <DummyText />
-                </div>
-              </div>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-              <div className="nav-hover-container">
-                <div className="nav-hover-section">
-                  <DummyText />
-                </div>
-              </div>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="#">
-                Disabled
-              </a>
-            </li>
+            {navData.map((item, i) => {
+              return (
+                <li className="nav-item me-2">
+                  <a className="nav-link" href="#">
+                    {item.title}
+                  </a>
+                  <div className="nav-hover-container">
+                    <div className="nav-hover-section">
+                      {/* <DummyText /> */}
+                      <HoverSection type={item.type} />
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </nav>
