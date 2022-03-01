@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link href="./navbar.css" rel="stylesheet" />
+    <title>Navbar Example</title>
+    <style>
+      .nav-hover-section {
+        display: none;
+        left: 10%;
+        margin: auto;
+        height: 440px;
+        width: 80%;
+        z-index: 1;
+        text-align: left;
+        position: absolute;
+        top: 0;
+        background-color: #fff;
+        transition: all 0.3s ease-out;
+        box-shadow: inset 0 0 8px rgb(0 0 0 / 10%);
+        pointer-events: auto;
+        color: black;
+        overflow: scroll;
+      }
+      .nav-hover-container {
+        display: none;
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 0;
+        pointer-events: none;
+      }
+      .nav-block {
+        display: none;
+      }
+
+      .nav-item:hover .nav-hover-container,
+      .nav-item:hover + .column .nav-block,
+      .nav-item:hover .nav-hover-section {
+        display: block !important;
+        transition-delay: 0.15s;
+      }
+      .column {
+        float: left;
+        /* display: block; */
+        position: relative;
+        /* height: 436px; */
+        padding-top: 4px;
+      }
+      .column:nth-child(2n) {
+        background-color: rgba(245, 245, 246, 0.4);
+      }
+      .nav-block {
+        /* display: block; */
+        position: relative;
+        float: left;
+        width: 216px;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-block li {
+        padding-left: 25px;
+      }
+      .type-title {
+        text-transform: capitalize;
+        color: #3e4152;
+        padding: 12px 0 2px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 25px;
+        font-weight: 500;
+        color: #0db7af;
+      }
+      .type-data,
+      .type-title {
+        /* display: block; */
+        font-size: 14px;
+        text-decoration: none;
+      }
+      .type-data {
+        color: #282c3f;
+        line-height: 23px !important;
+        font-weight: 400;
+      }
+      .nav-hover-section::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="http://localhost:3000/#">Navbar</a
+        ><button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item me-2">
+              <a class="nav-link" href="http://localhost:3000/#">Men</a>
+              <div class="nav-hover-container position-fixed">
+                <div class="nav-hover-section position-absolute">
+                  <li class="column">
+                    <ul class="nav-block">
+                      <li class="type-title">Topwear</li>
+                      <li class="type-data">T-Shirts</li>
+                      <li class="type-data">Casual Shirts</li>
+                      <li class="type-data">Formal Shirts</li>
+                      <li class="type-data">Sweatshirts</li>
+                      <li class="type-data">Sweaters</li>
+                      <li class="type-data">Jackets</li>
+                      <li class="type-data">Blazers &amp; Coats</li>
+                      <li class="type-data">Suits</li>
+                      <li class="type-data">Rain Jackets</li>
+                    </ul>
+                  </li>
+                  <li class="column">
+                    <ul class="nav-block">
+                      <li class="type-title">Indian &amp; Festive Wear</li>
+                      <li class="type-data">Kurtas &amp; Kurta Sets</li>
+                      <li class="type-data">Sherwanis</li>
+                      <li class="type-data">Nehru Jackets</li>
+                      <li class="type-data">Dhotis</li>
+                    </ul>
+                  </li>
+                  <li class="column">
+                    <ul class="nav-block">
+                      <li class="type-title">Bottomwear</li>
+                      <li class="type-data">Jeans</li>
+                      <li class="type-data">Casual Trousers</li>
+                      <li class="type-data">Formal Trousers</li>
+                      <li class="type-data">Shorts</li>
+                      <li class="type-data">Track Pants &amp; Joggers</li>
+                    </ul>
+                  </li>
+                  <li class="column">
+                    <ul class="nav-block">
+                      <li class="type-title">Innerwear &amp; Sleepwear</li>
+                      <li class="type-data">Briefs &amp; Trunks</li>
+                      <li class="type-data">Boxers</li>
+                      <li class="type-data">Vests</li>
+                      <li class="type-data">Sleepwear &amp; Loungewear</li>
+                      <li class="type-data">Thermals</li>
+                    </ul>
+                  </li>
+                  <li class="column">
+                    <ul class="nav-block">
+                      <li class="type-title">Footwear</li>
+                      <li class="type-data">Casual Shoes</li>
+                      <li class="type-data">Sports Shoes</li>
+                      <li class="type-data">Formal Shoes</li>
+                      <li class="type-data">Sneakers</li>
+                      <li class="type-data">Sandals &amp; Floaters</li>
+                      <li class="type-data">Flip Flops</li>
+                      <li class="type-data">Socks</li>
+                    </ul>
+                  </li>
+                  <li class="column">
+                    <ul class="nav-block">
+                      <li class="type-title">Sports &amp; Active Wear</li>
+                      <li class="type-data">Sports Shoes</li>
+                      <li class="type-data">Sports Sandals</li>
+                      <li class="type-data">Active T-Shirts</li>
+                      <li class="type-data">Track Pants &amp; Shorts</li>
+                      <li class="type-data">Tracksuits</li>
+                      <li class="type-data">Jackets &amp; Sweatshirts</li>
+                      <li class="type-data">Sports Accessories</li>
+                      <li class="type-data">Swimwear</li>
+                    </ul>
+                  </li>
+                  <li class="column">
+                    <ul class="nav-block">
+                      <li class="type-title">Gadgets</li>
+                      <li class="type-data">Smart Wearables</li>
+                      <li class="type-data">Fitness Gadgets</li>
+                      <li class="type-data">Headphones</li>
+                      <li class="type-data">Speakers</li>
+                    </ul>
+                  </li>
+                  <li class="column">
+                    <ul class="nav-block">
+                      <li class="type-title">Fashion Accessories</li>
+                      <li class="type-data">Wallets</li>
+                      <li class="type-data">Belts</li>
+                      <li class="type-data">Belts</li>
+                      <li class="type-data">Perfumes &amp; Body Mists</li>
+                      <li class="type-data">Trimmers</li>
+                      <li class="type-data">Deodorants</li>
+                      <li class="type-data">
+                        Ties, Cufflinks &amp; Pocket Squares
+                      </li>
+                      <li class="type-data">Accessory Gift Sets</li>
+                      <li class="type-data">Caps &amp; Hats</li>
+                      <li class="type-data">Mufflers, Scarves &amp; Gloves</li>
+                      <li class="type-data">Phone Cases</li>
+                      <li class="type-data">Rings &amp; Wristwear</li>
+                      <li class="type-data">Helmets</li>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+            </li>
+            <!-- <li class="nav-item me-2">
+              <a class="nav-link" href="http://localhost:3000/#">Women</a>
+              <div class="nav-hover-container">
+                <div class="nav-hover-section">
+                  <div class="hovered">
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Indian &amp; Fusion Wear</li>
+                        <li class="type-data">Kurtas &amp; Suits</li>
+                        <li class="type-data">Kurtis, Tunics &amp; Tops</li>
+                        <li class="type-data">Ethnic Wear</li>
+                        <li class="type-data">
+                          Leggings, Salwars &amp; Churidars
+                        </li>
+                        <li class="type-data">Skirts &amp; Palazzos</li>
+                        <li class="type-data">Sarees</li>
+                        <li class="type-data">Dress Materials</li>
+                        <li class="type-data">Lehenga Cholis</li>
+                        <li class="type-data">Dupattas &amp; Shawls</li>
+                        <li class="type-data">Jackets</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Western Wear</li>
+                        <li class="type-data">Dresses</li>
+                        <li class="type-data">Jumpsuits</li>
+                        <li class="type-data">Tops</li>
+                        <li class="type-data">Jeans</li>
+                        <li class="type-data">Trousers &amp; Capris</li>
+                        <li class="type-data">Shorts &amp; Skirts</li>
+                        <li class="type-data">Shrugs</li>
+                        <li class="type-data">Sweaters &amp; Sweatshirts</li>
+                        <li class="type-data">Jackets &amp; Coats</li>
+                        <li class="type-data">Blazers &amp; Waistcoats</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Footwear</li>
+                        <li class="type-data">Flats</li>
+                        <li class="type-data">Casual Shoes</li>
+                        <li class="type-data">Heels</li>
+                        <li class="type-data">Boots</li>
+                        <li class="type-data">Sports Shoes &amp; Floaters</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Sports &amp; Active Wear</li>
+                        <li class="type-data">Clothing</li>
+                        <li class="type-data">Footwear</li>
+                        <li class="type-data">Sports Accessories</li>
+                        <li class="type-data">Sports Equipment</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Lingerie &amp; Sleepwear</li>
+                        <li class="type-data">Bra</li>
+                        <li class="type-data">Briefs</li>
+                        <li class="type-data">Shapewear</li>
+                        <li class="type-data">Sleepwear &amp; Loungewear</li>
+                        <li class="type-data">Swimwear</li>
+                        <li class="type-data">Camisoles &amp; Thermals</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Beauty &amp; Personal Care</li>
+                        <li class="type-data">Makeup</li>
+                        <li class="type-data">Skincare</li>
+                        <li class="type-data">Premium Beauty</li>
+                        <li class="type-data">Lipsticks</li>
+                        <li class="type-data">Fragrances</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Gadgets</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Jewellery</li>
+                        <li class="type-data">Fashion Jewellery</li>
+                        <li class="type-data">Fine Jewellery</li>
+                        <li class="type-data">Earrings</li>
+                      </ul>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link" href="http://localhost:3000/#">Kids</a>
+              <div class="nav-hover-container">
+                <div class="nav-hover-section">
+                  <div class="hovered">
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Boys Clothing</li>
+                        <li class="type-data">T-Shirts</li>
+                        <li class="type-data">Shirts</li>
+                        <li class="type-data">Shorts</li>
+                        <li class="type-data">Jeans</li>
+                        <li class="type-data">Trousers</li>
+                        <li class="type-data">Clothing Sets</li>
+                        <li class="type-data">Ethnic Wear</li>
+                        <li class="type-data">Track Pants &amp; Pyjamas</li>
+                        <li class="type-data">
+                          Jacket, Sweater &amp; Sweatshirts
+                        </li>
+                        <li class="type-data">Part Wear</li>
+                        <li class="type-data">Innerwear &amp; Thermals</li>
+                        <li class="type-data">Nightwear &amp; Loungewear</li>
+                        <li class="type-data">Value Packs</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Girls Clothing</li>
+                        <li class="type-data">Dresses</li>
+                        <li class="type-data">Tshirts</li>
+                        <li class="type-data">Tops</li>
+                        <li class="type-data">Clothing Sets</li>
+                        <li class="type-data">Dungarees &amp; Jumpsuits</li>
+                        <li class="type-data">Trousers &amp; Capris</li>
+                        <li class="type-data">Lehenga choli</li>
+                        <li class="type-data">Shorts &amp; Skirts</li>
+                        <li class="type-data">Tights &amp; Leggings</li>
+                        <li class="type-data">Innerwear &amp; Thermals</li>
+                        <li class="type-data">
+                          Jacket, Sweater &amp; Sweatshirts
+                        </li>
+                        <li class="type-data">Nightwear &amp; Loungewear</li>
+                        <li class="type-data">Value Packs</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Footwear</li>
+                        <li class="type-data">Flipflops</li>
+                        <li class="type-data">Casual Shoes</li>
+                        <li class="type-data">Sports Shoes</li>
+                        <li class="type-data">Flats</li>
+                        <li class="type-data">Sandals</li>
+                        <li class="type-data">School Shoes</li>
+                        <li class="type-data">Socks</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Toys</li>
+                        <li class="type-data">Learning &amp; Development</li>
+                        <li class="type-data">Activity Toys</li>
+                        <li class="type-data">Soft Toys</li>
+                        <li class="type-data">Action Figure</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Infants</li>
+                        <li class="type-data">Bodysuits</li>
+                        <li class="type-data">Rompers &amp; Sleepsuits</li>
+                        <li class="type-data">Clothing Sets</li>
+                        <li class="type-data">Tshirts &amp; Tops</li>
+                        <li class="type-data">Dresses</li>
+                        <li class="type-data">Winter Wear</li>
+                        <li class="type-data">Innerwear &amp; Sleepwear</li>
+                        <li class="type-data">Infant Care</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Kids Accessories</li>
+                        <li class="type-data">Bags &amp; Backpacks</li>
+                        <li class="type-data">Watches</li>
+                        <li class="type-data">
+                          Jewellery &amp; Hair accessory
+                        </li>
+                        <li class="type-data">Sunglasses</li>
+                        <li class="type-data">Masks &amp; Protective Gears</li>
+                        <li class="type-data">Caps &amp; Hats</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Brands</li>
+                      </ul>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link" href="http://localhost:3000/#"
+                >Home &amp; Living</a
+              >
+              <div class="nav-hover-container">
+                <div class="nav-hover-section">
+                  <div class="hovered">
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Bed Linen &amp; Furnishing</li>
+                        <li class="type-data">Bedsheets</li>
+                        <li class="type-data">Bedding Sets</li>
+                        <li class="type-data">Blankets, Quilts &amp; Dohars</li>
+                        <li class="type-data">Pillows &amp; Pillow Covers</li>
+                        <li class="type-data">Bed Covers</li>
+                        <li class="type-data">Diwan Sets</li>
+                        <li class="type-data">Chair Pads &amp; Covers</li>
+                        <li class="type-data">Sofa Covers</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Flooring</li>
+                        <li class="type-data">Carpets</li>
+                        <li class="type-data">Floor Mats &amp; Dhurries</li>
+                        <li class="type-data">Door Mats</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Bath</li>
+                        <li class="type-data">Bath Towels</li>
+                        <li class="type-data">Hand &amp; Face Towels</li>
+                        <li class="type-data">HeelBeach Towelss</li>
+                        <li class="type-data">Towels Set</li>
+                        <li class="type-data">Bath Rugs</li>
+                        <li class="type-data">Bath Robes</li>
+                        <li class="type-data">Bathroom Accessories</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Lamps &amp; Lighting</li>
+                        <li class="type-data">Floor Lamps</li>
+                        <li class="type-data">Ceiling Lamps</li>
+                        <li class="type-data">Table Lamps</li>
+                        <li class="type-data">Wall Lamps</li>
+                        <li class="type-data">Outdoor Lamps</li>
+                        <li class="type-data">String Lights</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Home Décor</li>
+                        <li class="type-data">Plants &amp; Planters</li>
+                        <li class="type-data">Aromas &amp; Candles</li>
+                        <li class="type-data">Clocks</li>
+                        <li class="type-data">Mirrors</li>
+                        <li class="type-data">Wall Décor</li>
+                        <li class="type-data">Festive Decor</li>
+                        <li class="type-data">Pooja Essentials</li>
+                        <li class="type-data">Wall Shelves</li>
+                        <li class="type-data">Fountains</li>
+                        <li class="type-data">Showpieces &amp; Vases</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Kitchen &amp; Table</li>
+                        <li class="type-data">Dinnerware &amp; Serveware</li>
+                        <li class="type-data">Cups and Mugs</li>
+                        <li class="type-data">Bakeware &amp; Cookware</li>
+                        <li class="type-data">Kitchen Storage &amp; Tools</li>
+                        <li class="type-data">Bar &amp; Drinkware</li>
+                        <li class="type-data">
+                          Table Covers &amp; Furnishings
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Storage</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Brands</li>
+                        <li class="type-data">Home Centre</li>
+                        <li class="type-data">Spaces</li>
+                        <li class="type-data">D'Decor</li>
+                        <li class="type-data">Portico New York</li>
+                        <li class="type-data">Story@Home</li>
+                        <li class="type-data">Pure Home &amp; Living</li>
+                        <li class="type-data">Swayam</li>
+                        <li class="type-data">Raymond Home</li>
+                        <li class="type-data">Maspar</li>
+                        <li class="type-data">Corelle</li>
+                        <li class="type-data">Trident</li>
+                        <li class="type-data">Cortina</li>
+                        <li class="type-data">Random</li>
+                        <li class="type-data">Ellementry</li>
+                        <li class="type-data">ROMEE</li>
+                        <li class="type-data">SEJ by Nisha Gupta</li>
+                      </ul>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link" href="http://localhost:3000/#">Beauty</a>
+              <div class="nav-hover-container">
+                <div class="nav-hover-section">
+                  <div class="hovered">
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Makeup</li>
+                        <li class="type-data">Lipstick</li>
+                        <li class="type-data">Lip Gloss</li>
+                        <li class="type-data">Lip Liner</li>
+                        <li class="type-data">Mascara</li>
+                        <li class="type-data">Eyeliner</li>
+                        <li class="type-data">Kajal</li>
+                        <li class="type-data">Eyeshadow</li>
+                        <li class="type-data">Foundation</li>
+                        <li class="type-data">Primer</li>
+                        <li class="type-data">Concealer</li>
+                        <li class="type-data">Compact</li>
+                        <li class="type-data">Nail Polish</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Skincare, Bath &amp; Body</li>
+                        <li class="type-data">Face Moisturiser</li>
+                        <li class="type-data">Cleanser</li>
+                        <li class="type-data">Masks &amp; Peel</li>
+                        <li class="type-data">Sunscreen</li>
+                        <li class="type-data">Serum</li>
+                        <li class="type-data">Face Wash</li>
+                        <li class="type-data">Eye Cream</li>
+                        <li class="type-data">Lip Balm</li>
+                        <li class="type-data">Body Lotion</li>
+                        <li class="type-data">Body Wash</li>
+                        <li class="type-data">Body Scrub</li>
+                        <li class="type-data">Hand Cream</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Haircare</li>
+                        <li class="type-data">Shampoo</li>
+                        <li class="type-data">Conditioner</li>
+                        <li class="type-data">Hair Cream</li>
+                        <li class="type-data">Hair Oil</li>
+                        <li class="type-data">Hair Color</li>
+                        <li class="type-data">Hair Serum</li>
+                        <li class="type-data">Hair Accessory</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Fragrances</li>
+                        <li class="type-data">Perfume</li>
+                        <li class="type-data">Deodorant</li>
+                        <li class="type-data">Body Mist</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Appliances</li>
+                        <li class="type-data">Hair Straightener</li>
+                        <li class="type-data">Hair Dryer</li>
+                        <li class="type-data">Epilator</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Men's Grooming</li>
+                        <li class="type-data">Trimmers</li>
+                        <li class="type-data">Beard Oil</li>
+                        <li class="type-data">Hair Wax</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Beauty Gift &amp; Makeup Set</li>
+                      </ul>
+                    </li>
+                    <li class="column">
+                      <ul class="nav-block">
+                        <li class="type-title">Brands</li>
+                        <li class="type-data">Lakme</li>
+                        <li class="type-data">Maybelline</li>
+                        <li class="type-data">LOreal</li>
+                        <li class="type-data">Philips</li>
+                        <li class="type-data">Bath &amp; Body Works</li>
+                        <li class="type-data">THE BODY SHOP</li>
+                        <li class="type-data">Biotique</li>
+                        <li class="type-data">Mamaearth</li>
+                        <li class="type-data">MCaffeine</li>
+                        <li class="type-data">Nivea</li>
+                        <li class="type-data">Lotus Herbals</li>
+                        <li class="type-data">LOreal Professionnel</li>
+                        <li class="type-data">KAMA AYURVEDA</li>
+                        <li class="type-data">M.A.C</li>
+                        <li class="type-data">Forest Essentials</li>
+                      </ul>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+      <h2>Body Container</h2>
+      <img
+        src="https://ik.imagekit.io/2e5xfxvehcg/Myntra/Assets/img/carousel1_qD4cgmXKm.jpg"
+        class="d-block w-100"
+      /><img
+        src="https://ik.imagekit.io/2e5xfxvehcg/Myntra/Assets/img/carousel2_dL7cn7d9j.webp"
+        class="d-block w-100"
+      />
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
